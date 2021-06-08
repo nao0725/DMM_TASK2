@@ -21,10 +21,8 @@
    <%= @book.body %>
   </p>
 
-    <!--<a class="edit_282658" href="/books/282658/edit">Edit</a>-->
-    <%= link_to "Edit", "/books/282658/edit" %>
-    <!--<a class="back" href="/books">Back</a>-->
-    <%= link_to 'Back',books_path %>
+  <%= link_to "Edit", edit_book_paths %>
+  <%= link_to 'Back',books_path %>
 
   
 
