@@ -1,5 +1,5 @@
 <h1>Editing Book</h1>
-  <% @lists.each do |list| %>
+  <%= form_with model:@book, local: true do |f| %>
   
     <h4>Title</h4>
     <%=f.text_field :title %>
@@ -8,6 +8,6 @@
     <%=f.text_area :body %>
     <%=f.submit 'Update Book' %>
     
-    <%= link_to "Show", book_path[:id] %>
+    <%= link_to "Show", book_path %>
     <%= link_to 'Back', books_path %>
   <% end %>
