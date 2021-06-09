@@ -8,12 +8,14 @@
     <!-- Font Awesomeファイルの読み込み -->
 
     <!-- CSSファイルの読み込み -->
-    <link rel="stylesheet" href="show.css" />
+    <link rel="stylesheet" href="application.css" />
     <title>show</title>
   </head>
 
   <body>
-    <%= flash[:notice] %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
 
   <p>
    <strong>Title:</strong>
