@@ -1,21 +1,45 @@
-<h1>Editing Book</h1>
 
-    <% if @book.errors.any? %>
-        <%= @book.errors.count %>件のエラーが発生しました
-      <% @book.errors.full_messages.each do |message| %>
-        <%= message %>
+<!-- 【HTML】ソースコード -->
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Font Awesomeファイルの読み込み -->
+
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="application.css" />
+    <title>edit</title>
+  </head>
+
+<body>
+  <h1>Editing Book</h1>
+
+    <from>
+      <% if @book.errors.any? %>
+          <%= @book.errors.count %>件のエラーが発生しました
+        <% @book.errors.full_messages.each do |message| %>
+          <%= message %>
+        <% end %>
       <% end %>
-    <% end %>
     
-  <%= form_with model:@book, local: true do |f| %>
-  
+    <%= form_with model:@book, local: true do |f| %>
+  <div class="field">
     <h4>Title</h4>
     <%=f.text_field :title %>
-    
+  </div>
+  <div class="field">
     <h4>Body</h4>
     <%=f.text_area :body %>
+  </div>
+  <div class="actions">
     <%=f.submit 'Update Book' %>
+  </div>
+    </form>
     
     <%= link_to "Show", book_path %>
     <%= link_to 'Back', books_path %>
   <% end %>
+  
+  </body>
+</html>
