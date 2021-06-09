@@ -15,14 +15,22 @@ class BooksController < ApplicationController
   
   def update
     book = Book.find(params[:id])
-    book.update(book_params)
-    redirect_to book_path(book)
+    if book.update(book_params)
+      redirect_to book_path(book)
+      flash[:notice] = "Book was successfully updated."
+    else
+      rennder:show
+    end
   end
 
   def create
     @book = Book.new(book_params)
-    @book.save
-    redirect_to book_path(@book)
+    if @book.save
+      redirect_to book_path(@book)
+      flash[:notice] = "Book was successfully created"
+    else
+      rennder:show
+    end
   end
 
   def destory
@@ -31,8 +39,8 @@ class BooksController < ApplicationController
     redirect_to book_path
   end
 
- private
-  def book_params
+  private
+    def book_params
       params.require(:book).permit(:title, :body)
-  end
+    end 
 end
