@@ -19,7 +19,7 @@ class BooksController < ApplicationController
       redirect_to book_path(book)
       flash[:notice] = "Book was successfully updated."
     else
-      rennder:show
+      render:show
     end
   end
 
@@ -29,7 +29,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book)
       flash[:notice] = "Book was successfully created"
     else
-      rennder:show
+      render:show
     end
   end
 

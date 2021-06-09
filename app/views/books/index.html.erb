@@ -27,9 +27,9 @@
       <p>タイトル</p>
       <span><%= book.title %></span>
       <span><%= book.body %></span>
-      <!--<span><%#= link_to "Show", book_path %></span>-->
-      <!--<span><%#= link_to "Edit", edit_book_path(@book) %></span>-->
-      <!--<span><%#= link_to "Destory", book_path(@book),method: :delete %></span>-->
+      <span><%= link_to "Show", book_path(book.id) %></span>
+      <span><%= link_to "Edit", edit_book_path(book.id) %></span>
+      <span><%= link_to "Destory", book_path(book.id),method: :delete %></span>
       <% end %>
     </tbody>
   </table>
